@@ -56,7 +56,7 @@ def createNgrok():
                 break
             except Exception as e:
                 print("Attempting ngrok connection again...")
-    return pub_url
+    return pub_url.replace("tcp://","")
 
 @client.event
 async def on_message(message):
