@@ -1,3 +1,13 @@
 .idea
 venv
 minecart.config
+server.jar
+logs
+eula.txt
+server.properties
+world
+banned-ips.json
+banned-players.json
+ops.json
+usercache.json
+whitelist.json

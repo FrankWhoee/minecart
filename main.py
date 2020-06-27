@@ -54,7 +54,7 @@ def createNgrok():
                 response = json.loads(requests.get('http://localhost:4040/api/tunnels').text)
                 pub_url = response['tunnels'][0]['public_url']
                 break
-            except:
+            except Exception as e:
                 print("Attempting ngrok connection again...")
     return pub_url
 
@@ -65,7 +65,7 @@ async def on_message(message):
 
     if message.content.startswith('!ngrok') or message.content.startswith('!ip'):
         response_text = """
-                {0.author}\nPublic URL: {1}
+                {0.author.mention}\nPublic URL: {1}
                 """.format(message, createNgrok())
         await message.channel.send(response_text)
 
